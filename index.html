@@ -1,1 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <meta
+    name="description"
+    content="TECZ provides professional technology repair, troubleshooting, setup, and support services."
+  />
+
+  <title>TECZ | Technology Solutions & Support</title>
+
+  <style>
+    :root {
+      --bg: #070b12;
+      --bg-light: #0d1420;
+      --card: #111a27;
+      --primary: #18a0ff;
+      --primary-dark: #0878c9;
+      --white: #ffffff;
+      --text: #d7dee8;
+      --muted: #8c99a8;
+      --border: rgba(255, 255, 255, 0.09);
+      --success: #35d07f;
+      --max-width: 1150px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(90%, var(--max-width));
+      margin: auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(7, 11, 18, 0.88);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 0.92rem;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-phone {
+      padding: 10px 17px;
+      border: 1px solid rgba(24, 160, 255, 0.4);
+      border-radius: 7px;
+      color: var(--primary) !important;
+      font-weight: 700;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 130px 0 90px;
+      background:
+        radial-gradient(
+          circle at 75% 30%,
+          rgba(24, 160, 255, 0.18),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 20% 80%,
+          rgba(24, 160, 255, 0.07),
+          transparent 30%
+        );
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border-radius: 30px;
+      background: rgba(24, 160, 255, 0.08);
+      border: 1px solid rgba(24, 160, 255, 0.2);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 10px var(--success);
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
+    }
+
+    h1 span {
+      color: var(--primary);
+    }
+
+    .hero-description {
+      max-width: 720px;
+      color: var(--text);
+      font-size: 1.18rem;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 23px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      transition: 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #39afff;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: white;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 105px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      max-width: 700px;
+      margin-bottom: 50px;
+    }
+
+    .section-label {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 15px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      background: var(--bg-light);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 32px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(24, 160, 255, 0.35);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(24, 160, 255, 0.1);
+      border-radius: 10px;
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 9px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* =========================
+       WHY TECZ
+    ========================= */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .why-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 15px;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--text);
+    }
+
+    .check {
+      width: 27px;
+      height: 27px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(53, 208, 127, 0.1);
+      color: var(--success);
+      border-radius: 50%;
+      font-size: 0.8rem;
+    }
+
+    /* =========================
+       REPAIR REQUEST
+    ========================= */
+
+    .request-section {
+      background: var(--bg-light);
+    }
+
+    .request-wrapper {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .request-info p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .contact-card {
+      padding: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .contact-card small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-card a {
+      color: var(--primary);
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .request-form {
+      padding: 35px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 13px 14px;
+      color: white;
+      background: #0a111b;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(24, 160, 255, 0.08);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    select {
+      appearance: auto;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-section {
+      text-align: center;
+    }
+
+    .contact-box {
+      padding: 65px 30px;
+      border-radius: 18px;
+      border: 1px solid rgba(24, 160, 255, 0.25);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(24, 160, 255, 0.1),
+          rgba(255, 255, 255, 0.02)
+        );
+    }
+
+    .contact-box p {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+    }
+
+    .phone-number {
+      display: block;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 25px;
+      letter-spacing: -1px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 850px) {
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .why-grid,
+      .request-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .service-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .request-form {
+        padding: 24px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav>
+    <div class="container nav-container">
+
+      <a href="#" class="logo">
+        TEC<span>Z</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">Why TECZ</a></li>
+        <li><a href="#request">Request Service</a></li>
+        <li>
+          <a href="tel:9094438488" class="nav-phone">
+            Call Us
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO / COMPANY INTRO
+  ========================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Professional Technology Support
+          </div>
+
+          <h1>
+            Technology problems.<br />
+            <span>Solutions that work.</span>
+          </h1>
+
+          <p class="hero-description">
+            TECZ provides dependable technology repair, troubleshooting,
+            setup, and technical support for customers who need their
+            technology working the way it should. From everyday problems
+            to more complex technical issues, we're here to help you
+            understand the problem and find the right solution.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#request" class="btn btn-primary">
+              Request a Service
+            </a>
+
+            <a href="tel:9094438488" class="btn btn-secondary">
+              Call 909-443-8488
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section id="services" class="services">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            01 — Services
+          </div>
+
+          <h2>
+            Technology support<br />
+            without the confusion.
+          </h2>
+
+          <p class="section-description">
+            Tell us what's wrong and we'll help identify the next
+            step toward getting your technology back up and running.
+          </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+          <div class="service-card">
+
+            <div class="service-icon">💻</div>
+
+            <h3>Computer Repair</h3>
+
+            <p>
+              Help with computer problems, performance issues,
+              software problems, and general troubleshooting.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-icon">🛠️</div>
+
+            <h3>Technical Troubleshooting</h3>
+
+            <p>
+              Diagnose technology problems and identify practical
+              solutions for hardware and software issues.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-icon">⚙️</div>
+
+            <h3>Setup & Installation</h3>
+
+            <p>
+              Assistance setting up computers, devices, software,
+              peripherals, and other technology.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-icon">📶</div>
+
+            <h3>Connectivity Issues</h3>
+
+            <p>
+              Troubleshooting common Wi-Fi, internet, networking,
+              and device connectivity problems.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-icon">🔒</div>
+
+            <h3>Security & Protection</h3>
+
+            <p>
+              Help identifying common security concerns and improving
+              the protection of your technology.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-icon">💡</div>
+
+            <h3>Technology Guidance</h3>
+
+            <p>
+              Get straightforward guidance when you're unsure what
+              technology solution is right for you.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHY TECZ
+    ========================== -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="why-grid">
+
+          <div class="why-text">
+
+            <div class="section-label">
+              02 — Why TECZ
+            </div>
+
+            <h2>
+              Technology should make
+              life easier.
+            </h2>
+
+            <p>
+              When something goes wrong with your technology, you
+              shouldn't have to spend hours trying to figure out
+              what's happening.
+            </p>
+
+            <p>
+              TECZ is focused on providing clear communication,
+              practical troubleshooting, and technology support
+              designed around the customer's needs.
+            </p>
+
+          </div>
+
+
+          <ul class="check-list">
+
+            <li>
+              <span class="check">✓</span>
+              Clear communication
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Customer-focused support
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Practical technology solutions
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Straightforward troubleshooting
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Easy ways to request help
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICE REQUEST
+    ========================== -->
+
+    <section id="request" class="request-section">
+
+      <div class="container">
+
+        <div class="request-wrapper">
+
+          <div class="request-info">
+
+            <div class="section-label">
+              03 — Request Service
+            </div>
+
+            <h2>
+              Tell us what's wrong.
+            </h2>
+
+            <p>
+              Describe the technology problem you're experiencing.
+              Give us as much information as possible so we can
+              better understand what you need.
+            </p>
+
+            <p>
+              After submitting your request, TECZ can use the
+              information you provide to follow up with you.
+            </p>
+
+
+            <div class="contact-card">
+
+              <small>Prefer to call?</small>
+
+              <a href="tel:9094438488">
+                909-443-8488
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- SERVICE REQUEST FORM -->
+
+          <form
+            class="request-form"
+            id="serviceForm"
+          >
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="name">
+                  Your Name
+                </label>
+
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="John Smith"
+                  required
+                />
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="phone">
+                  Phone Number
+                </label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="(909) 555-1234"
+                  required
+                />
+
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="email">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+              />
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="device">
+                What needs help?
+              </label>
+
+              <select id="device" name="device">
+
+                <option value="">
+                  Select an option
+                </option>
+
+                <option>
+                  Computer / Laptop
+                </option>
+
+                <option>
+                  Phone / Tablet
+                </option>
+
+                <option>
+                  Wi-Fi / Internet
+                </option>
+
+                <option>
+                  Software
+                </option>
+
+                <option>
+                  Other Technology
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="problem">
+                Describe the problem
+              </label>
+
+              <textarea
+                id="problem"
+                name="problem"
+                placeholder="Please describe what is happening, what device you're using, and anything you've already tried..."
+                required
+              ></textarea>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="btn btn-primary submit-btn"
+            >
+              Submit Service Request
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact" class="contact-section">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div class="section-label">
+            04 — Contact TECZ
+          </div>
+
+          <h2>
+            Need technology help?
+          </h2>
+
+          <p>
+            Contact TECZ directly or submit a service request above.
+            We're ready to hear about your technology problem.
+          </p>
+
+          <a
+            href="tel:9094438488"
+            class="phone-number"
+          >
+            909-443-8488
+          </a>
+
+          <a
+            href="tel:9094438488"
+            class="btn btn-primary"
+          >
+            Call TECZ
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <span>
+        © 2026 TECZ. All rights reserved.
+      </span>
+
+      <span>
+        Technology Solutions & Support
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       FORM SCRIPT
+  ========================== -->
+
+  <script>
+    document
+      .getElementById("serviceForm")
+      .addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const name =
+          document.getElementById("name").value;
+
+        alert(
+          "Thank you, " +
+          name +
+          ". Your service request has been received. TECZ will contact you soon."
+        );
+
+        this.reset();
+
+      });
+  </script>
+
+</body>
+</html>
